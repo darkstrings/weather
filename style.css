@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nanum Myeongjo", serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+  background-size: cover;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #000000d0;
+  padding: 1.5rem;
+  border-radius: 30px;
+
+  margin: 1em;
+  color: rgb(218, 211, 211);
+}
+.hidden {
+  display: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current {
+  width: 30vw;
+}
+
+.warn {
+  width: 50vw;
+  overflow: auto;
+}
+
+.warning_line {
+  color: red;
+  font-size: 1.3rem;
+}
+.disclaimer {
+  color: red;
+}
+
+.fa-searchengin {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 2.4rem;
+  width: 2.8rem;
+  outline: none;
+  background: rgba(218, 211, 211, 0.3);
+  color: rgb(218, 211, 211);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+button:hover {
+  color: rgb(218, 211, 211);
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 20.5px;
+  background: rgba(102, 98, 98, 0.3);
+  color: rgb(218, 211, 211);
+  font-family: inherit;
+  font-size: 110%;
+  width: calc(100% - 0.5rem);
+  height: 2.5rem;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.disp {
+  margin: 0.7rem;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 1.5rem;
+  position: relative;
+}
+
+.weather.loading:after {
+  visibility: visible;
+  content: "Loading.....";
+  color: rgb(218, 211, 211);
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
