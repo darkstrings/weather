@@ -8,6 +8,7 @@ const searchBtn = document.querySelector(".search button");
 const searchInput = document.querySelector(".search-bar");
 const icon = document.querySelector(".icon");
 const warningLine = document.querySelector(".warning_line");
+const alertLabel = document.querySelector(".alert_label");
 import { WEATHER_API_KEY } from "./wxApiKey.js";
 
 searchBtn.addEventListener("click", function () {
@@ -93,13 +94,15 @@ function displayWeather(data) {
 ///////////////////////////DISPLAY ALERTS
 
 function displayAlerts(data) {
-  if (data.alerts.length === 0) {
+  const alertNum = data.alerts.length;
+  if (alertNum === 0) {
     warningLine.innerHTML = `None`;
   } else {
     warningLine.innerHTML = "";
+    alertLabel.innerHTML = `${alertNum} ${alertNum === 1 ? "Alert" : "Alerts"}`;
     data.alerts.forEach((alert) => {
       console.log(alert);
-      warningLine.insertAdjacentHTML("beforeend", ` <li class="alert_li"><b> ${alert.title}</b></li>`);
+      warningLine.insertAdjacentHTML("beforeend", `<li class="alert_li"><b> ${alert.title}</b></li>`);
     });
   }
 }
