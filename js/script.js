@@ -29,7 +29,6 @@ if ("geolocation" in navigator) {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
 
-      console.log(`Latitude: ${lat}, longitude: ${lng}`);
       getWeather(lat, lng);
     },
 
@@ -80,7 +79,6 @@ async function getWeather(input1, input2) {
 //////////////////////////DISPLAY CURRENT DATA
 
 function displayWeather(data) {
-  console.log(data);
   cityDisplay.innerHTML = `${data.data[0].city_name}, ${data.data[0].state_code}`;
   tempDisplay.innerHTML = `${Math.floor(data.data[0].app_temp)}°F`;
   descriptionDisplay.innerHTML = `${data.data[0].weather.description} `;
@@ -101,7 +99,6 @@ function displayAlerts(data) {
     warningLine.innerHTML = "";
     alertLabel.innerHTML = `${alertNum} ${alertNum === 1 ? "Alert" : "Alerts"}`;
     data.alerts.forEach((alert) => {
-      console.log(alert);
       warningLine.insertAdjacentHTML("beforeend", `<li class="alert_li"><b> ${alert.title}</b></li>`);
     });
   }
