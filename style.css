@@ -64,11 +64,11 @@ button:hover {
 }
 
 .current {
-  width: 50vw;
+  width: 30vw;
 }
 
 .warn {
-  width: 50vw;
+  width: 40vw;
   overflow: auto;
   height: 50vh;
 }
@@ -126,7 +126,13 @@ button:hover {
   left: 1rem;
 }
 
-@media screen and (max-width: 913px) {
+@media screen and (max-width: 1500px) {
+  .disclaimer {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .body {
     padding-top: 0rem;
   }
@@ -144,7 +150,7 @@ button:hover {
     padding: 0.5rem;
   }
   .current {
-    width: 80vw;
+    width: 50vw;
   }
   .disclaimer {
     padding: 0.1rem;
@@ -154,6 +160,7 @@ button:hover {
 @media screen and (max-width: 540px) {
   .current {
     height: auto;
+    width: 60vw;
   }
   .icon {
     height: 3rem;
@@ -169,6 +176,12 @@ button:hover {
     font-size: 0.8rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .current {
+    width: 90vw;
   }
 }
 @media screen and (orientation: landscape) and (min-device-height: 500px) and (max-device-width: 1366px) {

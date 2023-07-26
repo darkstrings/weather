@@ -103,3 +103,5 @@ function displayAlerts(data) {
     });
   }
 }
+
+// Add 5 day forecast that swaps with warnings from a button.....A spot that shows that there's a warning/advisory so that they know to click on it.
