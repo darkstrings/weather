@@ -48,25 +48,19 @@ async function getWeather(input1, input2) {
   let dataCurrent;
 
   if (isNaN(input1) && !input2) {
-    const responseCurrent = await fetch(
-      `https://api.weatherbit.io/v2.0/current?city=${input1}&key=${WEATHER_API_KEY}&include=minutely&units=i`
-    );
+    const responseCurrent = await fetch(`https://api.weatherbit.io/v2.0/current?city=${input1}&key=${WEATHER_API_KEY}`);
     const responseAlerts = await fetch(`https://api.weatherbit.io/v2.0/alerts?city=${input1}&key=${WEATHER_API_KEY}`);
     dataAlerts = await responseAlerts.json();
     dataCurrent = await responseCurrent.json();
   } else if (!isNaN(input1) && !input2) {
-    const responseCurrent = await fetch(
-      `https://api.weatherbit.io/v2.0/current?postal_code=${input1}&key=${WEATHER_API_KEY}&include=minutely&units=i`
-    );
+    const responseCurrent = await fetch(`https://api.weatherbit.io/v2.0/current?postal_code=${input1}&key=${WEATHER_API_KEY}`);
     const responseAlerts = await fetch(`https://api.weatherbit.io/v2.0/alerts?postal_code=${input1}&key=${WEATHER_API_KEY}`);
     dataAlerts = await responseAlerts.json();
     dataCurrent = await responseCurrent.json();
   } else {
     !isNaN(input1) && !isNaN(input2);
 
-    const responseCurrent = await fetch(
-      `https://api.weatherbit.io/v2.0/current?lat=${input1}&lon=${input2}&key=${WEATHER_API_KEY}&include=minutely&units=i`
-    );
+    const responseCurrent = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${input1}&lon=${input2}&key=${WEATHER_API_KEY}`);
     const responseAlerts = await fetch(`https://api.weatherbit.io/v2.0/alerts?lat=${input1}&lon=${input2}&key=${WEATHER_API_KEY}`);
     dataAlerts = await responseAlerts.json();
     dataCurrent = await responseCurrent.json();
@@ -94,7 +88,7 @@ function displayWeather(data) {
 function displayAlerts(data) {
   const alertNum = data.alerts.length;
   if (alertNum === 0) {
-    warningLine.innerHTML = `None`;
+    warningLine.innerHTML = `No alerts as of last update`;
   } else {
     warningLine.innerHTML = "";
     alertLabel.innerHTML = `${alertNum} ${alertNum === 1 ? "Alert" : "Alerts"}`;
